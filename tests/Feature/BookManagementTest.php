@@ -6,12 +6,10 @@ use App\Models\Book;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class BookReservationTest extends TestCase
+class BookManagementTest extends TestCase
 {
     use RefreshDatabase;
    public function test_a_book_can_be_added_to_the_library(){
-
-    $this->withoutExceptionHandling();
 
     $response = $this->post('/books',[
         'title'=>'Cool book titile',
@@ -62,7 +60,6 @@ class BookReservationTest extends TestCase
 
    public function test_a_book_can_be_deleted(){
     
-    $this->withoutExceptionHandling();
     $this->post('/books',[
         'title'=>'Cool book titile',
         'author'=> 'Doe'
